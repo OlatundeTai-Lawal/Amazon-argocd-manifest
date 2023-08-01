@@ -10,8 +10,8 @@ node {
     stage('Update GIT') {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    withCredentials([usernamePassword(credentialsId: 'Ola-github-token', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                        //script {def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')}
+                    withCredentials([usernamePassword(credentialsId: 'Ola-github-token', passwordVariable: 'GIT_SECRET TEXT', usernameVariable: 'GIT_USERNAME')]) {
+                        //script {def encodedPassword = URLEncoder.encode("$GIT_SECRET TEXT",'UTF-8')}
                         //script  {def IMAGE='tundeficky/amazon-clone'}
                         sh "git config user.email tundeficky@gmail.com"
                         sh "git config user.name Olatunde Tai-Lawal"
@@ -21,7 +21,7 @@ node {
                         sh "cat deployment.yml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/argocd-amazon-manifest.git HEAD:main"
+                        sh "git push https://${GIT_USERNAME}:${GIT_SECRET TEXT}@github.com/${GIT_USERNAME}/argocd-amazon-manifest.git HEAD:main"
              }
          }
      }
