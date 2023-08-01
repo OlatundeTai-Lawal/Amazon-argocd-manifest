@@ -13,7 +13,7 @@ spec:
       app: amazon-app
       tier: frontend
       version: 1.0.0
-#pod tempalte
+#pod template
   template:
     metadata:
       labels:
@@ -23,7 +23,7 @@ spec:
     spec: # Pod spec
       containers:
       - name: amazon-container
-        image: ooghenekaro/amazon:3
+        image: tundeficky/amazon-clone:latest
         ports:
         - containerPort: 3000
         
