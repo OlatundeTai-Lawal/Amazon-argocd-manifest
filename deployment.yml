@@ -23,7 +23,7 @@ spec:
     spec: # Pod spec
       containers:
       - name: amazon-container
-        image: tundeficky/amazon-clone:latest
+        image: tundeficky/amazon-clone:12
         ports:
         - containerPort: 3000
         
